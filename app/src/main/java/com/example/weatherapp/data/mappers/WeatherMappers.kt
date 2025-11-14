@@ -57,11 +57,12 @@ fun Forecastday.toForecastDayData(index: Int): ForecastDayData {
     val currentHourStr = getCurrentTime(HOUR_PATTERN)
     hour.forEach { hour ->
         val result = hour.toHourData()
-        if(index == 0) {
+        if (index == 0) {
             val isFirstHourAfterSecond = isFirstHourAfterSecond(
                 currentHourStr,
-                result.hourStr)
-            if(isFirstHourAfterSecond) {
+                result.hourStr
+            )
+            if (isFirstHourAfterSecond) {
                 list.add(result)
             }
         } else {
@@ -71,7 +72,7 @@ fun Forecastday.toForecastDayData(index: Int): ForecastDayData {
     return ForecastDayData(
         date = date,
         hourData = list,
-        )
+    )
 }
 
 fun Hour.toHourData(): HourData {
@@ -99,7 +100,8 @@ fun getDateTime(dateTime: String, pattern: String = DATE_HOUR_PATTERN): DateTime
     val minutes = dateTime.minute
     val date = dateTime.toLocalDate()
     val hour = if (hours < 10) "0$hours" else "$hours"
-    return DateTime( dateStr = date.toString(),
+    return DateTime(
+        dateStr = date.toString(),
         timeStr = String.format(Locale.getDefault(), HOURS_MINUTES_FORMAT, hours, minutes),
         hourStr = hour
     )

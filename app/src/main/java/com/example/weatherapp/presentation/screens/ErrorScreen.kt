@@ -23,7 +23,7 @@ fun ErrorScreen(viewModel: WeatherViewModel, error: String) {
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
-        ) {
+    ) {
 
         var showDialog by remember { mutableStateOf(true) }
 

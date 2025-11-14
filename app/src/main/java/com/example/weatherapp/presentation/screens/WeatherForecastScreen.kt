@@ -37,7 +37,7 @@ fun WeatherForecastScreen(
                 .padding(horizontal = 16.dp)
         ) {
             Text(
-                text = if(index == 0) stringResource(R.string.today) else data.date,
+                text = if (index == 0) stringResource(R.string.today) else data.date,
                 fontSize = 20.sp,
                 color = Color.White
             )
