@@ -1,0 +1,4 @@
+/build
+/prod/release/output-metadata.json
+/prod/release/baselineProfiles/1/app-prod-release.dm
+/prod/release/baselineProfiles/0/app-prod-release.dm

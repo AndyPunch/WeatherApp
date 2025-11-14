@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="today">Сегодня</string>
+    <string name="error">Ошибка</string>
+    <string name="retry">Повторить запрос</string>
+    <string name="cancel">Отмена</string>
+</resources>
