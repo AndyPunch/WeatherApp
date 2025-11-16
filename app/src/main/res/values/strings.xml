@@ -4,4 +4,5 @@
     <string name="error">Ошибка</string>
     <string name="retry">Повторить запрос</string>
     <string name="cancel">Отмена</string>
+    <string name="exit">Выйти</string>
 </resources>

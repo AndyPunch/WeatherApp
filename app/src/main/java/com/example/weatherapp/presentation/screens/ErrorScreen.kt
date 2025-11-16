@@ -1,5 +1,6 @@
 package com.example.weatherapp.presentation.screens
 
+import android.app.Activity
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,7 +14,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.window.DialogProperties
 import com.example.weatherapp.R
 import com.example.weatherapp.presentation.WeatherViewModel
 
@@ -24,9 +27,8 @@ fun ErrorScreen(viewModel: WeatherViewModel, error: String) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-
         var showDialog by remember { mutableStateOf(true) }
-
+        val context = LocalContext.current
         if (showDialog) {
             AlertDialog(
                 onDismissRequest = {
@@ -47,10 +49,17 @@ fun ErrorScreen(viewModel: WeatherViewModel, error: String) {
                     }
                 },
                 dismissButton = {
-                    Button(onClick = { showDialog = false }) {
-                        Text(stringResource(R.string.cancel))
+                    Button(onClick = {
+                        showDialog = false
+                        (context as? Activity)?.finish()
+                    }) {
+                        Text(stringResource(R.string.exit))
                     }
-                }
+                },
+                properties = DialogProperties(
+                    dismissOnBackPress = false,
+                    dismissOnClickOutside = false
+                )
             )
         }
 

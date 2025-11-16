@@ -26,7 +26,7 @@ data class HourData(
     val localDate: String,
     val condition: ConditionData,
     val temperature: Int,
-    val hourStr: String
+    val timeEpoch: Long
 )
 
 data class CurrentData(
