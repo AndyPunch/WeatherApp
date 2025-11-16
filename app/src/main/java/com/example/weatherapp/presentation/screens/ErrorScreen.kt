@@ -62,6 +62,5 @@ fun ErrorScreen(viewModel: WeatherViewModel, error: String) {
                 )
             )
         }
-
     }
 }

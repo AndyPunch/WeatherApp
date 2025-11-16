@@ -16,9 +16,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import com.example.weatherapp.R
 import com.example.weatherapp.presentation.WeatherState
 
 
@@ -49,12 +51,10 @@ fun WeatherScreen(
                 ) {
                     Text(
                         text = data.name,
-
                         color = Color.White
                     )
                     Text(
-                        text = "Сегодня ${data.localTime}",
-
+                        text = stringResource(R.string.todayTime, data.localTime),
                         color = Color.White
                     )
                 }
@@ -67,7 +67,7 @@ fun WeatherScreen(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
-                    text = "${data.current.temperature}°C",
+                    text = stringResource(R.string.celsius, data.current.temperature),
                     fontSize = 50.sp,
                     color = Color.White
                 )

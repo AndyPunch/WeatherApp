@@ -8,9 +8,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.example.weatherapp.R
 import com.example.weatherapp.domain.entity.HourData
 
 @Composable
@@ -19,7 +21,6 @@ fun HourScreen(
     modifier: Modifier = Modifier,
     textColor: Color = Color.White
 ) {
-
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -35,7 +36,7 @@ fun HourScreen(
             modifier = Modifier.width(40.dp)
         )
         Text(
-            text = "${hourData.temperature}°C",
+            text = stringResource(R.string.celsius, hourData.temperature),
             color = textColor,
             fontWeight = FontWeight.Bold
         )

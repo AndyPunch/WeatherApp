@@ -19,6 +19,5 @@ class WeatherRepositoryImpl @Inject constructor(
         } catch (e: Exception) {
             Resource.Error(e.message ?: "Неизвестная ошибка")
         }
-
     }
 }

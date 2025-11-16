@@ -57,5 +57,4 @@ object AppModule {
         return okHttpClient.build()
     }
 
-
 }

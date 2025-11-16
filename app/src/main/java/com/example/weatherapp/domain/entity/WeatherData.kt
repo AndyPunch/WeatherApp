@@ -10,7 +10,6 @@ data class WeatherData(
     val forecast: ForecastData
 )
 
-
 data class ForecastData(
     val forecastDayData: List<ForecastDayData>
 )
@@ -33,7 +32,6 @@ data class CurrentData(
     val temperature: Int,
     val condition: ConditionData
 )
-
 
 data class ConditionData(
     val icon: String,

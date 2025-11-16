@@ -18,6 +18,7 @@ import kotlin.math.roundToInt
 
 const val DATE_HOUR_PATTERN = "yyyy-MM-dd HH:mm"
 const val HOURS_MINUTES_FORMAT = "%02d:%02d"
+
 fun WeatherDto.toWeatherData(): WeatherData {
     val dateTime = getDateTime(location.localtime)
     val icon = getIconUrl(current.condition.icon)
@@ -49,7 +50,6 @@ fun Forecast.toForecastData(): ForecastData {
     )
 }
 
-
 fun Forecastday.toForecastDayData(index: Int): ForecastDayData {
     val list = mutableListOf<HourData>()
     hour.forEach { hour ->
@@ -78,7 +78,6 @@ fun Hour.toHourData(): HourData {
     )
 }
 
-
 fun getDateTime(dateTime: String, pattern: String = DATE_HOUR_PATTERN): DateTime {
     val inputFormatter = DateTimeFormatter.ofPattern(pattern)
     val dateTime = LocalDateTime.parse(dateTime, inputFormatter)
@@ -90,7 +89,6 @@ fun getDateTime(dateTime: String, pattern: String = DATE_HOUR_PATTERN): DateTime
         timeStr = String.format(Locale.getDefault(), HOURS_MINUTES_FORMAT, hours, minutes)
     )
 }
-
 
 fun getIconUrl(icon: String): String {
     return icon.replace("64x64", "128x128")

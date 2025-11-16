@@ -15,6 +15,7 @@ import javax.inject.Inject
 class WeatherViewModel @Inject constructor(
     private val repository: WeatherRepository
 ) : ViewModel() {
+
     var state by mutableStateOf(WeatherState())
         private set
 
@@ -32,7 +33,6 @@ class WeatherViewModel @Inject constructor(
                         error = null
                     )
                 }
-
                 is Resource.Error -> {
                     state = state.copy(
                         weatherInfo = null,
@@ -43,6 +43,5 @@ class WeatherViewModel @Inject constructor(
             }
         }
     }
-
 }
 
