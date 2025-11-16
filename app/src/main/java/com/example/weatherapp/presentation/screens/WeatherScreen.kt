@@ -54,7 +54,7 @@ fun WeatherScreen(
                         color = Color.White
                     )
                     Text(
-                        text = stringResource(R.string.todayTime, data.localTime),
+                        text = stringResource(R.string.today_time, data.localTime),
                         color = Color.White
                     )
                 }
